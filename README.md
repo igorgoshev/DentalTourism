@@ -1,3 +1,0 @@
-# Dental Tourism App
-
-### This project is in the making...
