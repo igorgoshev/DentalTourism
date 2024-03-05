@@ -4,14 +4,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from "react";
 import logo from '../images/logo.png'
-import {Button, Image} from "react-bootstrap";
+import {Button, Col, Image, Row} from "react-bootstrap";
 
 function NavBarCustom() {
     return (
         <Navbar expand="lg" className="container-fluid">
             <Container >
                 <Navbar.Brand className="align-content-center" href='#home'>
-                    <img src={logo} alt="logo" style={{maxHeight: "2.5em"}} className="px-4"></img>Dental Tourism
+
+                        <img src={logo} alt="logo" style={{maxHeight: "2.5em"}} className="px-4"/>
+
+                        DENTAL
+
+                        TOURISM
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
@@ -21,7 +26,7 @@ function NavBarCustom() {
                         <Nav.Link className='px-3' href="#link">Services</Nav.Link>
                         <Nav.Link className='px-3' href="#link">Contact</Nav.Link>
                         <div className="px-3 justify-content-center">
-                            <Button className="border-0 text-body-secondary rounded-1" style={{backgroundColor: '#fd9a49', boxShadow: '0.125em 0.2em 0.4em'}}>Request Appointment</Button>
+                            <Button className="border-0  text-body-white rounded-0" style={{backgroundColor: '#fd9a49', boxShadow: '0.125em 0.2em 0.4em'}}>Request Appointment</Button>
                         </div>
                     </Nav>
                 </Navbar.Collapse>
