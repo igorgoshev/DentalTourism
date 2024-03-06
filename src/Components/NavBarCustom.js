@@ -8,7 +8,7 @@ import {Button, Col, Image, Row} from "react-bootstrap";
 
 function NavBarCustom() {
     return (
-        <Navbar expand="lg" className="container-fluid">
+        <Navbar expand="lg" className="container-fluid" >
             <Container >
                 <Navbar.Brand className="align-content-center" href='#home'>
                     <Row>
