@@ -3,8 +3,6 @@ import doctor from "../images/dental-doctor.jpg"
 import Container from "react-bootstrap/Container";
 import Kocka from "../Components/Kocka";
 import {Col, Image, Row} from "react-bootstrap";
-import blue from "../images/background blue.png"
-import {Image} from "react-bootstrap";
 import blue from "../images/background-blue.png"
 function Home() {
     return (
@@ -22,11 +20,11 @@ function Home() {
                 backgroundRepeat:"no-repeat",
                 backgroundAttachment: "fixed",
                 height: '100vh',
-                backgroundPosition: "center",
+                backgroundPosition: "top",
                 backgroundSize: "100% auto",
                 opacity: "30%"
             }}>
-                <p>laaa</p>
+                <h1>Dental Tourism</h1>
             </Container>
 
             <Container style={{paddingTop: "6em"}}>
