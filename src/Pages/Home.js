@@ -4,10 +4,16 @@ import Container from "react-bootstrap/Container";
 function Home() {
     return (
         <>
-            <NavBarCustom/>
-            <Container className="container-fluid">
-                <img className="img-fluid" src={doctor} alt="doctor" style={{width: "100vw"}}/>
-            </Container>
+                <Container fluid className="px-0" style={{backgroundImage: ` linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url(${doctor})`,
+                    backgroundRepeat:"no-repeat",
+                    height: '100vh',
+                    // width: "100vw",
+                backgroundSize: "100% auto"}}></Container>
+
+
+
+                {/*<img className="" src={doctor} alt="doctor" style={{width: "100vw"}}/>*/}
+
         </>
     )
 }
