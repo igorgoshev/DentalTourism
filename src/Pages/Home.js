@@ -1,16 +1,29 @@
 import NavBarCustom from "../Components/NavBarCustom";
 import doctor from "../images/dental-doctor.jpg"
 import Container from "react-bootstrap/Container";
+import Kocka from "../Components/Kocka";
+import {Image} from "react-bootstrap";
+import blue from "../images/background blue.png"
 function Home() {
     return (
         <>
-                <Container fluid className="px-0" style={{backgroundImage: ` linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url(${doctor})`,
+                <Container fluid className="p-0" style={{
+                    backgroundImage: ` linear-gradient(to bottom, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(${doctor})`,
                     backgroundRepeat:"no-repeat",
+                    backgroundAttachment: "fixed",
                     height: '100vh',
+                    backgroundPosition: "center",
+
                     // width: "100vw",
-                backgroundSize: "100% auto"}}></Container>
+                backgroundSize: "100% auto cover"}}>
 
 
+                </Container>
+
+
+            
+            <Kocka></Kocka>
+            <Kocka></Kocka>
 
                 {/*<img className="" src={doctor} alt="doctor" style={{width: "100vw"}}/>*/}
 

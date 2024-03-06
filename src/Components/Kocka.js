@@ -3,7 +3,7 @@ import { Card, Col, Image } from 'react-bootstrap';
 import logo from "../images/logo.png"
 const Kocka = () => {
     return (
-        <div className="card" style={{ width: '16em', height:'13em', borderColor: '#1c7c82' }}>
+        <div className="card d-inline-block" style={{ width: '16em', height:'13em', borderColor: '#1c7c82' }}>
             <div className="position-relative">
                 {/*<div className="border-top border-primary" style={{ height: '1px' }}></div>*/}
                 <div className="position-absolute top-0 start-50 translate-middle-x" style={{ zIndex: '1', marginTop: '-1em' }}>
