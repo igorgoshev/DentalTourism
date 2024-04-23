@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Kocka from "../Components/Kocka";
 import {Col, Image, Row} from "react-bootstrap";
 import blue from "../images/background-blue.png"
+import Footer from "../Components/Footer";
 function Home() {
     return (
         <>
@@ -44,6 +45,7 @@ function Home() {
 
             </Container>
 
+            <Footer></Footer>
         </>
     )
 }
