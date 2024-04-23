@@ -1,3 +1,6 @@
+import { IoLogoInstagram } from "react-icons/io5";
+import { FaFacebook } from "react-icons/fa";
+
 
 const Footer = () => {
     return(
@@ -80,15 +83,11 @@ const Footer = () => {
                                 <use xlinkHref="#twitter"></use>
                             </svg>
                         </a></li>
-                        <li className="ms-3"><a className="link-body-emphasis" href="#">
-                            <svg className="bi" width="24" height="24">
-                                <use xlinkHref="#instagram"></use>
-                            </svg>
+                        <li className="m-3"><a className="link-body-emphasis" href="#">
+                                 <IoLogoInstagram />
                         </a></li>
-                        <li className="ms-3"><a className="link-body-emphasis" href="#">
-                            <svg className="bi" width="24" height="24">
-                                <use xlinkHref="#facebook"></use>
-                            </svg>
+                        <li className="m-3"><a className="link-body-emphasis" href="#">
+                            <FaFacebook />
                         </a></li>
                     </ul>
                 </div>

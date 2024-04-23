@@ -14,21 +14,28 @@ function Home() {
                 backgroundAttachment: "fixed",
                 height: '100vh',
                 backgroundSize: "100% auto"}}>
+                <div className="d-flex justify-content-center">
+                    <h1 className="text-white align-self-center" style={{paddingTop: "20%"}}>Maintain your smile for a lifetime</h1>
+                </div>
+                <button className="btn btn-secondary">Book your appointment</button>
             </Container>
 
-            <Container fluid  style={{
+            <Container fluid style={{
                 backgroundImage: `url(${blue})`,
                 backgroundRepeat:"no-repeat",
                 backgroundAttachment: "fixed",
                 height: '100vh',
                 backgroundPosition: "top",
                 backgroundSize: "100% auto",
-                opacity: "30%"
+                opacity: "30%",
             }}>
-                <h1>Dental Tourism</h1>
+                <div>
+                    <h1 className="p-5" style={{color:"#cd5700", fontWeight:"bold"}}>WELCOME TO DENTAL TOURISM IN MACEDONIA</h1>
+                </div>
             </Container>
 
-            <Container style={{paddingTop: "6em"}}>
+            <Container style={{paddingTop: "3em"}}>
+                <h1 className="pb-5" style={{color: "#1C7C82"}}>A place to look and feel your best!</h1>
                 <Row className="justify-content-between">
                     <Col className="col-md-4">
                         <Kocka title={"title1"}></Kocka>
