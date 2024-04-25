@@ -4,6 +4,9 @@ import NavBarCustom from "./Components/NavBarCustom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from "./Pages/Home";
+import AboutUs from "./Pages/AboutUs";
+import Contact from "./Pages/Contact";
+import Services from "./Pages/Services";
 
 function App() {
     return (
@@ -34,6 +37,9 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path={"/"} element={<Home/>}/>
+                        <Route path={"/about"} element={<AboutUs/>}/>
+                        <Route path={"/contact"} element={<Contact/>}/>
+                        <Route path={"/services"} element={<Services/>}/>
 
                     </Routes>
                 </BrowserRouter>

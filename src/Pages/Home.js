@@ -7,6 +7,10 @@ import blue from "../images/background-blue.png"
 import Footer from "../Components/Footer";
 import BeforeAfter from "../Components/BeforeAfter";
 import {Link} from "react-router-dom";
+import "../CSS/HomePageCss.css"
+
+
+
 function Home() {
     return (
         <>
@@ -90,7 +94,7 @@ function Home() {
                            </Col>
                         </Container>
 
-                        <hr/>
+                        <hr className="shadow-sm"/>
                         <Container className="m-5 d-flex text-start">
                             <Col>
                                 <h5>Phone</h5>
