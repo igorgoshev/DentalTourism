@@ -63,10 +63,27 @@ function Home() {
 
             </Container>
 
-            <Container style={{paddingTop: "3em"}}>
+            <Container style={{paddingTop: "0", marginTop: "-70px"}}>
                 <h1 className="mb-5" style={{color: "#1C7C82"}}>Happy clients!</h1>
                 <BeforeAfter/>
                 <BeforeAfter/>
+            </Container>
+
+            <Container>
+                <Row>
+
+
+                <Col style={{width: "100%"}} className="m-8">
+                    <iframe style={{width:"800px", height:"600px"}}
+                            src="https://maps.google.com/maps?width=800&amp;height=600&amp;hl=en&amp;q=Majka%20Tereza%2060/3+(dr%20Ljupka%20Terzieva)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                        <a href="https://www.gps.ie/">gps systems</a></iframe>
+                </Col>
+                    <Col className="m-4">
+                    <address>
+                        
+                    </address>
+                    </Col>
+                </Row>
             </Container>
 
             <Footer></Footer>
