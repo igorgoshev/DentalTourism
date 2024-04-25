@@ -21,12 +21,8 @@ class BeforeAfter extends Component {
             "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HAYXA5G5F6XMMVOAKZVYKHZ6TQ.jpg";
 
         return (
-            <div className="mainWrapper">
-                <div className="contentWrapper">
+            <div className="d-inline-block px-2 m-0" style={{width: "500px", height:"500px"}}>
                     <ReactCompareImage leftImage={before} rightImage={after} />
-                    <ReactCompareImage leftImage={before} rightImage={after} />
-                    <ReactCompareImage leftImage={before} rightImage={after} />
-                </div>
             </div>
         );
     }

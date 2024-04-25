@@ -63,7 +63,11 @@ function Home() {
 
             </Container>
 
-            <BeforeAfter></BeforeAfter>
+            <Container style={{paddingTop: "3em"}}>
+                <h1 className="mb-5" style={{color: "#1C7C82"}}>Happy clients!</h1>
+                <BeforeAfter/>
+                <BeforeAfter/>
+            </Container>
 
             <Footer></Footer>
         </>
