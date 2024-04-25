@@ -5,19 +5,29 @@ import Kocka from "../Components/Kocka";
 import {Col, Image, Row} from "react-bootstrap";
 import blue from "../images/background-blue.png"
 import Footer from "../Components/Footer";
+import BeforeAfter from "../Components/BeforeAfter";
 function Home() {
     return (
         <>
-            <Container fluid className="p-0 d-block" style={{
+            {/*todo pokazuvanje eden tip ekran kako tell, eden kako desktop*/}
+            <Container fluid className="d-block align-items-center" style={{
                 backgroundImage: ` linear-gradient(to bottom, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(${doctor})`,
                 backgroundRepeat:"no-repeat",
                 backgroundAttachment: "fixed",
                 height: '100vh',
                 backgroundSize: "100% auto"}}>
-                <div className="d-flex justify-content-center">
-                    <h1 className="text-white align-self-center" style={{paddingTop: "20%"}}>Maintain your smile for a lifetime</h1>
-                </div>
-                <button className="btn btn-secondary">Book your appointment</button>
+                <Row style={{height: "100%"}} className="align-items-center">
+                    <Col className="col-12 align-self-end" >
+                    <h1 className="text-white text-center">Maintain your smile for a lifetime</h1>
+                    </Col>
+                    <Col className="col-12 align-self-end text-start text-white" style={{paddingBottom: "4em", paddingLeft: "4em"}}>
+
+                        <button className="btn btn-secondary">Book your appointment</button>
+                        <Col className="py-2 px-3">Call +389 75 500 000</Col>
+
+                    </Col>
+                </Row>
+
             </Container>
 
             <Container fluid style={{
@@ -29,9 +39,10 @@ function Home() {
                 backgroundSize: "100% auto",
                 opacity: "30%",
             }}>
-                <div>
-                    <h1 className="p-5" style={{color:"#cd5700", fontWeight:"bold"}}>WELCOME TO DENTAL TOURISM IN MACEDONIA</h1>
-                </div>
+                <Row className="d-flex">
+                    <Col className="pt-5 px-5 pb-0 display-5 col-6 text-start" style={{color:"#cd5700", fontWeight:"bold", wordSpacing: ""}}>WELCOME TO DENTAL TOURISM IN MACEDONIA </Col>
+                </Row>
+
             </Container>
 
             <Container style={{paddingTop: "3em"}}>
@@ -51,6 +62,8 @@ function Home() {
             <Container fluid style={{backgroundColor: "#e9f6f4", position: "relative", top: "-19vh", height: "30vh", backgroundSize: "100% auto", zIndex: '-1'}}>
 
             </Container>
+
+            <BeforeAfter></BeforeAfter>
 
             <Footer></Footer>
         </>
