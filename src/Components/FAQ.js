@@ -2,6 +2,8 @@ import Accordion from 'react-bootstrap/Accordion';
 
 function AllCollapseExample() {
     return (
+<>
+    <h1 className="pb-5" style={{color: "#1C7C82"}}>Frequently asked Questions</h1>
         <Accordion>
             <Accordion.Item eventKey="0">
                 <Accordion.Header>Accordion Item #1</Accordion.Header>
@@ -40,6 +42,8 @@ function AllCollapseExample() {
                 </Accordion.Body>
             </Accordion.Item>
         </Accordion>
+</>
+
     );
 }
 
