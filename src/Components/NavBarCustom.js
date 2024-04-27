@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from "react";
 import logo from '../images/logo.png'
 import {Button, Col, Image, Row} from "react-bootstrap";
+import '../CSS/NavBar.css'
 
 function NavBarCustom() {
     return (
@@ -28,7 +29,7 @@ function NavBarCustom() {
                         <Nav.Link className='px-3' href="/services">Services</Nav.Link>
                         <Nav.Link className='px-3' href="/contact">Contact</Nav.Link>
                         <div className="px-3 justify-content-center">
-                            <Button className="border-0  text-body-white rounded-0" style={{backgroundColor: '#fd9a49', boxShadow: '0.125em 0.2em 0.4em gray'}}>Request Appointment</Button>
+                            <Button id="asd" className="border-0 text-dark rounded-0" style={{backgroundColor: '#fd9a49', boxShadow: '0.125em 0.2em 0.4em gray'}}>Request Appointment</Button>
                         </div>
                     </Nav>
                 </Navbar.Collapse>

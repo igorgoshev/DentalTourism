@@ -9,6 +9,7 @@ import BeforeAfter from "../Components/BeforeAfter";
 import {Link} from "react-router-dom";
 import "../CSS/HomePageCss.css"
 import Location from "../Components/Location";
+import React from "react";
 
 
 
@@ -28,7 +29,7 @@ function Home() {
                     </Col>
                     <Col className="col-12 align-self-end text-start text-white" style={{paddingBottom: "4em", paddingLeft: "4em"}}>
 
-                        <button className="btn btn-secondary">Book your appointment</button>
+                        <button className="btn rounded-0 shadow" style={{backgroundColor: "#FF9849"}}>Book your appointment</button>
                         <Col className="py-2 px-3">Call +389 75 500 000</Col>
 
                     </Col>
