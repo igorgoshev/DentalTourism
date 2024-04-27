@@ -34,6 +34,7 @@ function App() {
                 {/*<HomePage></HomePage>*/}
                 {/*  <AdminPage></AdminPage>*/}
                 <NavBarCustom></NavBarCustom>
+                <hr className="m-0 shadow"/>
                 <BrowserRouter>
                     <Routes>
                         <Route path={"/"} element={<Home/>}/>

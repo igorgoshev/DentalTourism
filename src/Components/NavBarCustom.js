@@ -34,6 +34,7 @@ function NavBarCustom() {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+
     );
 }
 
