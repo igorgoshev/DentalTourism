@@ -37,7 +37,7 @@ function Home() {
 
             </Container>
 
-            <Container fluid style={{
+            <Container fluid className="px-5" style={{
                 backgroundImage: `url(${blue})`,
                 backgroundRepeat:"no-repeat",
                 backgroundAttachment: "fixed",
@@ -47,7 +47,20 @@ function Home() {
                 opacity: "30%",
             }}>
                 <Row className="d-flex">
-                    <Col className="pt-5 px-5 pb-0 display-5 col-6 text-start" style={{color:"#cd5700", fontWeight:"bold", wordSpacing: ""}}>WELCOME TO DENTAL TOURISM IN MACEDONIA </Col>
+                    <Col className="pt-5  pb-0 display-5 col-6 text-start" style={{color:"#cd5700", fontWeight:"bold", wordSpacing: ""}}>WELCOME TO DENTAL TOURISM IN MACEDONIA </Col>
+                </Row>
+
+                <Row className="d-flex">
+                    <Col className="col-5 justify-content-start" style={{textAlign: "justify"}}>
+                        Discover world-class dental care amidst the breathtaking landscapes of Macedonia. Our mission is to provide affordable, high-quality dental treatments while ensuring a memorable experience for our international patients.
+                        Affordable Prices: Enjoy significant cost savings compared to dental procedures in Western countries, without compromising on quality.
+                        Expertise & Quality: Our dental clinics adhere to international standards of hygiene and safety, ensuring top-notch care for every patient.
+                        Spectacular Destinations: Immerse yourself in the rich culture and stunning landscapes of Macedonia while undergoing dental treatment.
+                        Personalized Care: Our dedicated team is committed to providing personalized attention and support throughout your dental journey.
+                    </Col>
+                </Row>
+                <Row>
+
                 </Row>
 
             </Container>
