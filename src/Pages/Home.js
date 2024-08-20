@@ -1,7 +1,6 @@
 import NavBarCustom from "../Components/NavBarCustom";
 import doctor from "../images/dental-doctor.jpg"
 import Container from "react-bootstrap/Container";
-import Teeth from "../Components/Teeth";
 function Home() {
     return (
         <>
