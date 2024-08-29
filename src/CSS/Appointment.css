@@ -1,0 +1,15 @@
+.collapsing.collapse-horizontal {
+    transition: width 0.4s ease !important;
+}
+
+.collapsing {
+    transition: height 0.4s ease !important;
+}
+
+.card{
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 20px rgba(255, 152, 73, 0.5);
+}

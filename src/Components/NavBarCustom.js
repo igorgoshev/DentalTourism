@@ -25,11 +25,12 @@ function NavBarCustom() {
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
                     <Nav className="align-items-center justify-content-center">
                         <Nav.Link className='px-3' href="/">Home</Nav.Link>
-                        <Nav.Link style={{minWidth: "6.5em"}} className='px-3' href="/about">About us</Nav.Link>
                         <Nav.Link className='px-3' href="/services">Services</Nav.Link>
+                        <Nav.Link className='px-3' href="/travel">Travel</Nav.Link>
+                        <Nav.Link style={{minWidth: "6.5em"}} className='px-3' href="/about">About us</Nav.Link>
                         <Nav.Link className='px-3' href="/contact">Contact</Nav.Link>
                         <div className="px-3 justify-content-center">
-                            <Button id="asd" className="border-0 text-dark rounded-0" style={{backgroundColor: '#fd9a49', boxShadow: '0.125em 0.2em 0.4em gray'}}>Request Appointment</Button>
+                            <Button id="asd" href="/appointment" className="border-0 text-dark rounded-0" style={{backgroundColor: '#fd9a49', boxShadow: '0.125em 0.2em 0.4em gray'}}>Request Appointment</Button>
                         </div>
                     </Nav>
                 </Navbar.Collapse>

@@ -7,6 +7,9 @@ import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
 import Services from "./Pages/Services";
+import Footer from "./Components/Footer";
+import Appointment from "./Pages/Appointment";
+import Travel from "./Pages/Travel";
 
 function App() {
     return (
@@ -30,10 +33,10 @@ function App() {
             {/*</div>*/}
 
 
-            <div className="App">
+            <div className="App" >
                 {/*<HomePage></HomePage>*/}
                 {/*  <AdminPage></AdminPage>*/}
-                <NavBarCustom></NavBarCustom>
+                <NavBarCustom ></NavBarCustom>
                 <hr className="m-0 shadow"/>
                 <BrowserRouter>
                     <Routes>
@@ -41,9 +44,12 @@ function App() {
                         <Route path={"/about"} element={<AboutUs/>}/>
                         <Route path={"/contact"} element={<Contact/>}/>
                         <Route path={"/services"} element={<Services/>}/>
+                        <Route path={"/appointment"} element={<Appointment/>}/>
+                        <Route path={"/travel"} element={<Travel/>}/>
 
                     </Routes>
                 </BrowserRouter>
+                <Footer/>
             </div>
         </>
     );

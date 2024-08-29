@@ -3,10 +3,10 @@ import Container from "react-bootstrap/Container";
 import {Link} from "react-router-dom";
 
 
-const Location = () => {
+const Location = (props) => {
     return (
         <>
-            <Row className="py-5">
+            <Row className="py-5" >
                 <Col style={{width: "100%"}} className="m-8">
                     <iframe style={{width:"800px", height:"700px"}}
                             src="https://maps.google.com/maps?width=800&amp;height=600&amp;hl=en&amp;q=Majka%20Tereza%2060/3+(dr%20Ljupka%20Terzieva)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">

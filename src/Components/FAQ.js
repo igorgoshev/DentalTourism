@@ -1,50 +1,25 @@
 import Accordion from 'react-bootstrap/Accordion';
 
-function AllCollapseExample() {
+function AllCollapseExample(props) {
     return (
-<>
-    <h1 className="pb-5" style={{color: "#1C7C82"}}>Frequently asked Questions</h1>
-        <Accordion>
-            <Accordion.Item eventKey="0">
-                <Accordion.Header>Accordion Item #1</Accordion.Header>
-                <Accordion.Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="1">
-                <Accordion.Header>Accordion Item #2</Accordion.Header>
-                <Accordion.Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2">
-                <Accordion.Header>Accordion Item #3</Accordion.Header>
-                <Accordion.Body>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </Accordion.Body>
-            </Accordion.Item>
-        </Accordion>
-</>
-
-    );
+        <>
+            <h1 className="pb-5" style={{color: "#1C7C82"}}>Frequently asked Questions</h1>
+            <Accordion style={{width: "100%"}}>
+                {props.questions.map((question, index) => {
+                    return <Accordion.Item eventKey={index}>
+                        <Accordion.Header>{question.question}</Accordion.Header>
+                        <Accordion.Body className="pb-0">
+                            <ul className="text-start">
+                                {question.answer.map(x => {
+                                    return <li className="pb-3"><b>{x.topic}</b> {x.description}</li>
+                                })}
+                            </ul>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                })}
+            </Accordion>
+        </>
+    )
 }
 
 export default AllCollapseExample;

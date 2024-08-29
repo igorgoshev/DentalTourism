@@ -3,8 +3,12 @@ import Footer from "../Components/Footer";
 import Container from "react-bootstrap/Container";
 import React from "react";
 import {Col, Row} from "react-bootstrap";
+import questions from "../Components/Questions";
+import Review from "../Components/Review";
 
 function AboutUs() {
+
+
     return (
         <>
             <Container fluid className="d-block align-items-center" style={{
@@ -26,13 +30,12 @@ function AboutUs() {
                 </Row>
 
             </Container>
-            <Container style={{width: "800px"}} className="p-5">
-
-                <FAQ></FAQ>
+            <Container  style={{padding: "5em 0"}}>
+                    <FAQ questions={questions}/>
             </Container>
+            <Review/>
 
 
-                <Footer/>
 
         </>
     )
