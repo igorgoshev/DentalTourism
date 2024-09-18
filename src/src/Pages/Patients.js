@@ -1,7 +1,5 @@
 import Container from "react-bootstrap/Container";
 import PatientComponent from "../Components/PatientComponent";
-import {FaRegUserCircle} from "react-icons/fa";
-import {Button} from "react-bootstrap";
 import {useEffect, useState} from "react";
 import axios from "axios";
 

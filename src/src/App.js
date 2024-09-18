@@ -39,8 +39,6 @@ function App() {
 
 
             <div className="App">
-                {/*<HomePage></HomePage>*/}
-                {/*  <AdminPage></AdminPage>*/}
                 <UserProvider>
                     <NavBarCustom></NavBarCustom>
                     <hr className="m-0 shadow"/>
