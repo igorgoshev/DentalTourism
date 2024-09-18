@@ -1,11 +1,13 @@
-import {Button, Card, Col, Row} from "react-bootstrap";
+import {Button, Card, Carousel, Col, Row} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import CardCarousel from "../Components/CardCarousel";
 import loft1 from "../images/loft (1).jpg";
 import loft2 from "../images/loft (2).jpg";
 import loft3 from "../images/loft (3).jpg"
 import loft4 from "../images/loft (4).jpg";
+import ReviewListing from "../Components/ReviewListing";
+import {get, getDatabase, ref} from "firebase/database";
 
 const Travel = () => {
 
@@ -36,21 +38,52 @@ const Travel = () => {
         }
     ]
 
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        const fetchReviews = async () => {
+            const reviewsRef = ref(getDatabase(), 'reviews/');
+            try {
+                const snapshot = await get(reviewsRef);
+                if (snapshot.exists()) {
+                    const reviewsData = snapshot.val();
+                    const reviewsArray = Object.keys(reviewsData).map(key => ({
+                        id: key,
+                        ...reviewsData[key]
+                    }));
+                    setReviews(reviewsArray);
+                } else {
+                    console.log("No reviews found");
+                }
+            } catch (error) {
+                console.error("Error fetching reviews:", error);
+            }
+        };
+
+        fetchReviews();
+    }, []);
+
+    console.log(reviews);
+
+
     return (
         <>
             <Container fluid className="d-block align-items-center" style={{
                 backgroundImage: ` linear-gradient(to bottom, rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(https://media.tacdn.com/media/attractions-content--1x-1/12/28/41/fb.jpg)`,
-                backgroundRepeat:"no-repeat",
+                backgroundRepeat: "no-repeat",
                 backgroundAttachment: "fixed",
                 height: '60vh',
-                backgroundSize: "100% auto"}}>
+                backgroundSize: "100% auto"
+            }}>
                 <Row style={{height: "100%"}} className="align-items-center">
-                    <Col className="col-12 align-self-end" >
+                    <Col className="col-12 align-self-end">
                         <h1 className="text-white text-center pt-5 mt-5">Every city street hides a new adventure!</h1>
                     </Col>
-                    <Col className="col-12 align-self-end text-start text-white" style={{paddingBottom: "4em", paddingLeft: "4em"}}>
+                    <Col className="col-12 align-self-end text-start text-white"
+                         style={{paddingBottom: "4em", paddingLeft: "4em"}}>
 
-                        <button className="btn rounded-0 shadow" style={{backgroundColor: "#FF9849"}}>Book your trip</button>
+                        <button className="btn rounded-0 shadow" style={{backgroundColor: "#FF9849"}}>Book your trip
+                        </button>
                         <Col className="py-2 px-3">Call +389 75 500 000</Col>
 
                     </Col>
@@ -78,9 +111,22 @@ const Travel = () => {
                     })}
 
                 </Row>
+                <Row className="m-0 p-0">
+                    <h1 className="pb-5" style={{color: "#FF9849"}}> <b>CUSTOMER REVIEWS</b></h1>
+                    <Carousel interval={5000} variant={"dark"} style={{height: "35vh"}}>
+                        {reviews.map(review => {
+                            console.log(review);
+                            return (
+                            <Carousel.Item>
+                                <ReviewListing review={review}/>
+                            </Carousel.Item>
+                            )
+                        })}
+                    </Carousel>
+
+                </Row>
 
             </Container>
-
 
 
         </>

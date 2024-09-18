@@ -10,6 +10,11 @@ import Services from "./Pages/Services";
 import Footer from "./Components/Footer";
 import Appointment from "./Pages/Appointment";
 import Travel from "./Pages/Travel";
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
+import "./CSS/App.css"
+import {UserProvider} from "./UserContext";
+import Patients from "./Pages/Patients";
 
 function App() {
     return (
@@ -33,23 +38,32 @@ function App() {
             {/*</div>*/}
 
 
-            <div className="App" >
+            <div className="App">
                 {/*<HomePage></HomePage>*/}
                 {/*  <AdminPage></AdminPage>*/}
-                <NavBarCustom ></NavBarCustom>
-                <hr className="m-0 shadow"/>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path={"/"} element={<Home/>}/>
-                        <Route path={"/about"} element={<AboutUs/>}/>
-                        <Route path={"/contact"} element={<Contact/>}/>
-                        <Route path={"/services"} element={<Services/>}/>
-                        <Route path={"/appointment"} element={<Appointment/>}/>
-                        <Route path={"/travel"} element={<Travel/>}/>
+                <UserProvider>
+                    <NavBarCustom></NavBarCustom>
+                    <hr className="m-0 shadow"/>
 
-                    </Routes>
-                </BrowserRouter>
-                <Footer/>
+                    <div className="app-container">
+                        <BrowserRouter>
+                            <Routes>
+                                <Route path={"/"} element={<Home/>}/>
+                                <Route path={"/about"} element={<AboutUs/>}/>
+                                <Route path={"/contact"} element={<Contact/>}/>
+                                <Route path={"/services"} element={<Services/>}/>
+                                <Route path={"/appointment"} element={<Appointment/>}/>
+                                <Route path={"/travel"} element={<Travel/>}/>
+                                <Route path="/signup" element={<Signup/>}/>
+                                <Route path="/login" element={<Login/>}/>
+                                <Route path="/patients" element={<Patients/>}/>
+                            </Routes>
+                        </BrowserRouter>
+
+                    </div>
+                    <Footer/>
+
+                </UserProvider>
             </div>
         </>
     );

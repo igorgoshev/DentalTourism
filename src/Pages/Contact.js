@@ -33,7 +33,7 @@ function Contact() {
 
             </Container>
 
-            <Container>
+            <Container style={{width: "55%"}}>
                 <h1 className="pt-5" style={{color: "#FF9849", fontWeight: "bold"}}>CONTACT</h1>
                 <Form className="p-5">
                     <Row className="mb-3">

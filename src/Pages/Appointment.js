@@ -1,11 +1,20 @@
 import AppointmentCard from "../Components/AppointmentCard";
 import Container from "react-bootstrap/Container";
-import {useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {Col, Collapse, Row} from "react-bootstrap";
 import "../CSS/Appointment.css"
+import {UserContext} from "../UserContext";
+import {get, getDatabase, ref} from "firebase/database";
 
 const Appointment = () => {
     const [openSections, setOpenSections] = useState({});
+    // const [appointment1, setAppointment1] = useState([]);
+    // const [appointment2, setAppointment2] = useState([]);
+    // const [appointment3, setAppointment3] = useState([]);
+    // const [appointment4, setAppointment4] = useState([]);
+    // const [appointment5, setAppointment5] = useState([]);
+
+    const [appointments, setAppointments] = useState([]);
 
     const handleToggle = (index) => {
         setOpenSections(prevState => ({
@@ -13,6 +22,16 @@ const Appointment = () => {
             [index]: !prevState[index]
         }));
     };
+
+    // function addAppointment(setApp){
+    //     return (str) => {
+    //         setApp((prevApp) => {
+    //             return [...prevApp, str];
+    //         });
+    //     }
+    // }
+
+
 
 
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -47,29 +66,80 @@ const Appointment = () => {
         return dates;
     }
 
-    const dates = getNextDates(4); // Gets current date and the next 4 dates
+    const [sundayAppointments, setSundayAppointments] = useState([]);
+    const [mondayAppointments, setMondayAppointments] = useState([]);
+    const [tuesdayAppointments, setTuesdayAppointments] = useState([]);
+    const [wednesdayAppointments, setWednesdayAppointments] = useState([]);
+    const [thursdayAppointments, setThursdayAppointments] = useState([]);
+    const [fridayAppointments, setFridayAppointments] = useState([]);
+    const [saturdayAppointments, setSaturdayAppointments] = useState([]);
+
+    const weekdayAppointments = {
+        "Sunday": sundayAppointments,
+        "Monday": mondayAppointments,
+        "Tuesday": tuesdayAppointments,
+        "Wednesday": wednesdayAppointments,
+        "Thursday": thursdayAppointments,
+        "Friday": fridayAppointments,
+        "Saturday": saturdayAppointments,
+    };
+
+    useEffect(() => {
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const stateSetters = {
+            "Sunday": setSundayAppointments,
+            "Monday": setMondayAppointments,
+            "Tuesday": setTuesdayAppointments,
+            "Wednesday": setWednesdayAppointments,
+            "Thursday": setThursdayAppointments,
+            "Friday": setFridayAppointments,
+            "Saturday": setSaturdayAppointments,
+        };
+
+        const fetchAppointmentsForDay = async (day) => {
+            const db = getDatabase();
+            const appointmentsRef = ref(db, `weekdays/${day}`);
+            try {
+                const snapshot = await get(appointmentsRef);
+                if (snapshot.exists()) {
+                    const appointmentsData = snapshot.val();
+                    const timesArray = Object.values(appointmentsData);
+                    stateSetters[day](timesArray);
+                } else {
+                    console.log(`No appointments found for ${day}`);
+                }
+            } catch (error) {
+                console.error(`Error fetching appointments for ${day}:`, error);
+            }
+        };
+
+        daysOfWeek.forEach(day => fetchAppointmentsForDay(day));
+    }, []);
+
+
+    const dates = getNextDates(4);
 
 
     const weekdays = [
         {
             day: weekday[d.getDay()], moto: weekdayMoto[d.getDay()], date: dates[0],
-            appointments: ["15:00", "17:00"],
+            appointments: weekdayAppointments[weekday[d.getDay()]],
         },
         {
-            day: weekday[(d.getDay()+1)%6], moto: weekdayMoto[(d.getDay()+1)%6], date: dates[1],
-            appointments: ["11:00", "15:00", "17:00"],
+            day: weekday[(d.getDay()+1)%7], moto: weekdayMoto[(d.getDay()+1)%7], date: dates[1],
+            appointments: weekdayAppointments[weekday[(d.getDay()+1)%7]],
         },
         {
-            day: weekday[(d.getDay()+2)%6], moto: weekdayMoto[(d.getDay()+2)%6], date: dates[2],
-            appointments: [ "17:00"],
+            day: weekday[(d.getDay()+2)%7], moto: weekdayMoto[(d.getDay()+2)%7], date: dates[2],
+            appointments: weekdayAppointments[weekday[(d.getDay()+2)%7]],
         },
         {
-            day: weekday[(d.getDay()+3)%6], moto: weekdayMoto[(d.getDay()+3)%6], date: dates[3],
-            appointments: ["11:00", "13:00", "15:00", "17:00"],
+            day: weekday[(d.getDay()+3)%7], moto: weekdayMoto[(d.getDay()+3)%7], date: dates[3],
+            appointments: weekdayAppointments[weekday[(d.getDay()+3)%7]],
         },
         {
-            day: weekday[(d.getDay()+4)%6], moto: weekdayMoto[(d.getDay()+4)%6], date: dates[4],
-            appointments: ["11:00", "13:00"],
+            day: weekday[(d.getDay()+4)%7], moto: weekdayMoto[(d.getDay()+4)%7], date: dates[4],
+            appointments: weekdayAppointments[weekday[(d.getDay()+4)%7]],
         }
     ]
 
@@ -82,11 +152,12 @@ const Appointment = () => {
                             <Col>
                                 <a onClick={() => handleToggle(index)}><AppointmentCard day={day}/></a>
                                 {day.appointments.map(app => {
+                                    console.log(app)
                                     return (
                                         <div className="py-3" style={{minHeight: '150px'}}>
                                             <Collapse in={openSections[index]} dimension="width">
                                                 <div id="example-collapse-text">
-                                                    <AppointmentCard appointment={app} />
+                                                    <AppointmentCard appointment={app.appointments} />
                                                 </div>
                                             </Collapse>
                                         </div>

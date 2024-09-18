@@ -1,6 +1,8 @@
-import  teeth from "../teeth/ImplaStation-DEMO-STL.stl"
+import teeth from "../teeth/ImplaStation-DEMO-STL.stl"
 import {StlViewer} from "react-stl-viewer";
-function Teeth() {
+function Teeth(props) {
+
+    const stl = props.teeth? props.teeth : teeth
     const style = {
         top: 0,
         left: 0,
@@ -13,7 +15,7 @@ function Teeth() {
                 style={style}
                 orbitControls
                 shadows
-                url={teeth}
+                url={stl}
             />
         </>
     )
